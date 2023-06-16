@@ -1,0 +1,6 @@
+Acima de tudo,
+é fundamental ressaltar que a adoção de políticas descentralizadoras nos obriga
+à análise do levantamento das variáveis envolvidas.
+Em suma,
+é necessário analisar o tamanho do Arquivo
+e verificar se há mais de 5 linhas.
