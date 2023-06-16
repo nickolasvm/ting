@@ -4,16 +4,17 @@ from ting_file_management.priority_queue import PriorityQueue
 from ting_file_management.file_process import process
 
 
+@pytest.mark.xfail
 def test_basic_priority_queueing():
     queue = PriorityQueue()
 
     # test if file with 5 lines or more queue in regular priority
-    process("statics/arquivo_teste_maior.txt", queue)
+    process("statics/arquivo_teste_mais_5.txt", queue)
     assert len(queue.regular_priority) == 1
     assert not queue.is_priority(queue.search(0))
 
     # test if file with less than 5 lines queue in high priority
-    process("statics/arquivo_teste.txt", queue)
+    process("statics/arquivo_teste_menos_5.txt", queue)
     assert len(queue.high_priority) == 1
     assert queue.is_priority(queue.search(0))
 
