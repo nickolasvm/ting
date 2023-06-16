@@ -32,18 +32,19 @@ def exists_word(word, instance):
 
 
 def search_by_word(word, instance):
-    """Aqui irá sua implementação"""
+    result = []
 
+    for i in range(len(instance)):
+        element = instance.search(i)
+        occurences = get_word_occurences(element, word)
 
-# [{
-#   "palavra": "de",
-#   "arquivo": "arquivo_teste.txt",
-#   "ocorrencias": [
-#     {
-#       "linha": 2
-#     },
-#     {
-#       "linha": 7
-#     }
-#   ]
-# }]
+        if occurences:
+            result.append(
+                {
+                    "palavra": word,
+                    "arquivo": element["nome_do_arquivo"],
+                    "ocorrencias": occurences,
+                }
+            )
+
+    return result
